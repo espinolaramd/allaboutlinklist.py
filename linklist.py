@@ -38,6 +38,34 @@ class Linked_list:
         return previous_node.data
 
 
+#clear the list
+    def clear_the_list(self):
+        self.head= None
+
+#search the list
+    def search_the_list(self,value):
+        current = self.head
+        while current.data == value or current.next:
+            if current.data == value :
+                return True
+            current= current.next
+        else: return False
+
+#remove value
+    def remove(self,value):
+        current_node=self.head
+        previous_node=self.head
+        while current_node == value or current_node.next:
+            if current_node == value:
+                previous_node = current_node.next
+            elif current_node.next:
+                previous_node = current_node
+                current_node = current_node.next
+            previous_node.next = current_node.next
+
+          
+
+
 
 
 
